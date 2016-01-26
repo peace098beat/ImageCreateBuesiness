@@ -37,7 +37,7 @@ SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
 DB_INIT = True
-DEBUG = True
+DEBUG = False
 CSS_DEBUG = False
 PAGE_TITLE = u'Image Create Business'
 
