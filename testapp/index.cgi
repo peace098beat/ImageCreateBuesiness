@@ -1,4 +1,4 @@
-#!/home/fififactory/.pyenv/versions/3.4.2-flask/bin/python
+#!/home/fififactory/.pyenv/versions/2.7.9/bin/python
  
 import cgitb
 cgitb.enable()

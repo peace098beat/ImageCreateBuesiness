@@ -1,4 +1,4 @@
-from testapp.testapp import app
+from testapp.flaskr import app
 
 
 if __name__ == '__main__':
