@@ -26,6 +26,7 @@ from contextlib import closing
 from flask import Flask, request, session, g, redirect
 from flask import url_for, abort, render_template, flash
 from flask_bootstrap import *
+
 # アプリ生成
 app = Flask(__name__)
 Bootstrap(app)
@@ -129,6 +130,10 @@ def top_page():
     # 取得したエントリを使ってhtmlをレンダリング
     return render_template('index.html', entries=entries)
 
+# テストページ
+@app.route('/test', methods=['GET'])
+def test_flask():
+    return 'Hello, World!', 200
 
 # エントリー追加
 @app.route('/add', methods=['POST'])
