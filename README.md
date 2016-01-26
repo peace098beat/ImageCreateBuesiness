@@ -1,10 +1,17 @@
 # Image>Create>Business
 
+
+
 ## git clone
 ```
 >git clone https://github.com/peace098beat/ImageCreateBuesiness
 ```
 
+## git pull
+リモートリポジトリの差分を更新
+```
+>git pull origin
+```
 
 
 ![img](./version0.1.0.jpg)
