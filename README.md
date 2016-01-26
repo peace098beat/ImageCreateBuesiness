@@ -13,6 +13,22 @@
 >git pull origin
 ```
 
+## エラー対策
+```
+Internal Server Error
+
+The server encountered an internal error or misconfiguration and was unable to complete your request.
+Please contact the server administrator, support@sakura.ad.jp and inform them of the time the error occurred, and anything you might have done that may have caused the error.
+More information about this error may be available in the server error log.
+```
+
+
+## パーミッション
+```
+>chmod 755 ./*
+>再帰
+>chmod -R 755 ./*
+```
 
 ![img](./version0.1.0.jpg)
 # SQLiteの使い方
