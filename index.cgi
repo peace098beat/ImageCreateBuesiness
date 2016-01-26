@@ -4,6 +4,7 @@ import cgitb
 cgitb.enable()
 
 from wsgiref.handlers import CGIHandler
-from ImageCreateBuesiness.flaskr import app
+# from ImageCreateBuesiness.flaskr import app
+from testapp.testapp.flaskr import app
 CGIHandler().run(app)
 
