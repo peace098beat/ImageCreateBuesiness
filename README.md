@@ -1,3 +1,5 @@
+
+[img](./version0.1.0.jpg)
 # SQLiteの使い方
 
 # IDの自動インクリメント
