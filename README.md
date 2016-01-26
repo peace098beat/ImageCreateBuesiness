@@ -1,6 +1,8 @@
 # Image>Create>Business
 
-
+## sakuraレンタルサーバー作業ログ
+どうもcgiで動作できない。Internal Server Error。
+パーミッションをすべて755にしてるがだめ。testappは起動できている。
 
 ## git clone
 ```
