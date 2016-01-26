@@ -1,0 +1,96 @@
+{% extends "bootstrap/base.html" %}
+<!-- タイトル -->
+{% block title %}
+{{config.PAGE_TITLE | default}}
+{% endblock title %}
+
+<!-- 静的ファイルフォルダからCSSを読み込む -->
+{%- block styles %}
+{{ super() }}
+<!-- userのスクリプト-->
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/user_style.css') }}">
+<!-- もしCSSデバックするなら-->
+{% if config.CSS_DEBUG %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/css_debug.css') }}">
+{% endif %}
+{%- endblock styles %}
+
+<!-- ナビバー -->
+{% block navbar %}
+<div class="navbar navbar-default">
+    <h1>IdeaCreateBusiness</h1>
+
+    <!-- ログインログアウトの表示(session.logged_inキーを使って、ログインアウトの状態を判別) -->
+    <div>
+        {% if not session.logged_in %}
+        <a href="{{ url_for('login') }}">ログイン</a> {% else %}
+        <a href="{{ url_for('logout') }}">ログアウト</a>
+        {% endif %}
+    </div>
+
+    <!-- flashを使ったメッセージの表示 -->
+    {% for message in get_flashed_messages() %}
+    <div class="bg-info">{{ message }}</div>
+    {% endfor %}
+</div>
+{%- endblock navbar %}
+
+<!--コンテンツ-->
+{% block content %}
+<!--フォーム-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <!-- ログイン中ならば追加要素を表示 -->
+            <form action="{{ url_for('add_entry') }}" method="post" class="add">
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                    <label>idea</label>
+                    <textarea name="title" class="form-control form-title" rows=1 cols=4 placeholder="タイトル"></textarea>
+                </div>
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
+                    <label>idea</label>
+                <textarea name="url" class="form-control form-title" rows=1 cols=4
+                          placeholder="http://fififactory.com/"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">登録</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- View-->
+<div class="container-fluid">
+    <h2><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>View</h2>
+
+    <div class="row">
+        {% for entry in entries %}
+        <div class="col-xs-2">
+            <p><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span><a href="{{entry.url}}">{{entry.title}}</a>
+            </p>
+            <small>
+                <spam>{{entry.id}}</spam>
+                <spam>{{entry.timestamp|safe}}</spam>
+            </small>
+        </div>
+        {% else %}
+        <!-- エントリが存在しない時 -->
+        <p>エントリーなんて無かったんだ…</p>
+        {% endfor %}
+    </div>
+</div>
+
+<!--フッターブロック-->
+{% block footer %}
+{% endblock footer %}
+
+<!--コンテツブロック終了-->
+{% endblock　content %}
+
+<!--スクリプト-->
+{% block script %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/user-script.js') }}"></script>
+{%- endblock script %}
