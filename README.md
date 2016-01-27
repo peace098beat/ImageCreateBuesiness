@@ -1,5 +1,9 @@
 # Image>Create>Business
 
+ワンポイントIdeaをためていくWebアプリ.
+
+サクラレンタルサーバーにアップロードしてるが動作できずストップ(2016/1/26)
+
 ## sakuraレンタルサーバー作業ログ
 どうもcgiで動作できない。Internal Server Error。
 パーミッションをすべて755にしてるがだめ。testappは起動できている。
