@@ -2,6 +2,8 @@
 
 ワンポイントIdeaをためていくWebアプリ.
 
+http://fififactoyr.sakura.ne.jp/ImageCreateBuesiness/index.cgi
+
 サクラレンタルサーバーにアップロードしてるが動作できずストップ(2016/1/26)
 github自動pull(2016/2/1)
 
