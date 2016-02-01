@@ -1,7 +1,6 @@
 <?php
 
 //exec('git --git-dir=.git pull');
-
 //exec('git fetch');
 //exec('git reset --hard origin/master');
 
