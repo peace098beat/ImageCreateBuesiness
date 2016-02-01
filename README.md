@@ -10,6 +10,14 @@ github自動pull(2016/2/1)
 ## sakuraレンタルサーバー作業ログ
 どうもcgiで動作できない。Internal Server Error。
 パーミッションをすべて755にしてるがだめ。testappは起動できている。
+(原因発見)
+git pull
+の後，パーミッションがもとに戻っている．
+下のコマンドでとりあえずよい
+git fetch
+git reset --hard origin/master
+chmod -R 755 ./*
+
 
 ## git clone
 ```
