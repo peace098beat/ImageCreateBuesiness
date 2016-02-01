@@ -18,6 +18,8 @@ git fetch
 git reset --hard origin/master
 chmod -R 755 ./*
 
+とりあえず．
+flaskr.pyのコード中にエラーがある．
 
 ## git clone
 ```
