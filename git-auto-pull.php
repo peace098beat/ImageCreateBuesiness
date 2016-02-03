@@ -5,7 +5,7 @@
 //exec('git reset --hard origin/master');
 
 exec('git --git-dir=.git fetch');
-exec('git --git-dir=.git reset --hard origin/master');
+exec('git --git-dir=.git reset --hard origin/master > 'git.log');
 
 
 exec('chmod -R 755 ./*');
