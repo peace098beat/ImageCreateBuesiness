@@ -6,6 +6,7 @@ http://fififactoyr.sakura.ne.jp/ImageCreateBuesiness/index.cgi
 
 サクラレンタルサーバーにアップロードしてるが動作できずストップ(2016/1/26)
 github自動pull(2016/2/1)
+(2016/2/4) testappのflaskr.pyでは動くので、flaskr.pyのアプリに問題
 
 ## sakuraレンタルサーバー作業ログ
 どうもcgiで動作できない。Internal Server Error。
