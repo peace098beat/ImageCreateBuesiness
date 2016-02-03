@@ -2,7 +2,7 @@
 #! coding:utf-8
 import cgitb
 # cgitb モジュールの enable() は、CGIスクリプトの実行時に発生したエラーの内容をブラウザに送信します
-cgitb.enable()
+cgitb.enable(logdir='/home/fififactory/www/ImageCreateBuesiness/cgi-error.log')
 
 from wsgiref.handlers import CGIHandler
 from ImageCreateBuesiness.flaskr import app
