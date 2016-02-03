@@ -113,6 +113,11 @@ def fetch_query(g, base=None, keys=None, table=None):
     entries = [dict(zip(keys, row)) for row in cur.fetchall()]
     return entries
 
+
+@app.route('/hello')
+def index():
+    return "Hello!"
+
 @app.route('/')
 def top_page():
     """topページのVIEW"""
