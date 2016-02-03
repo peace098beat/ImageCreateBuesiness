@@ -104,7 +104,7 @@ def fetch_query(g, base=None, keys=None, table=None):
     :param keys: リスト
     :param table: テーブル
     """
-    if base==None:
+    if base == None:
         base = 'SELECT %s FROM %s order by id desc'
     column = ','.join(keys)
     query = base % (column, table)
@@ -113,7 +113,13 @@ def fetch_query(g, base=None, keys=None, table=None):
     entries = [dict(zip(keys, row)) for row in cur.fetchall()]
     return entries
 
+
 @app.route('/')
+def index():
+    return "Hello!"
+
+
+@app.route('/hello')
 def top_page():
     """topページのVIEW"""
     flash(u'/top.htmlがひらかれました')
@@ -130,10 +136,12 @@ def top_page():
     # 取得したエントリを使ってhtmlをレンダリング
     return render_template('index.html', entries=entries)
 
+
 # テストページ
 @app.route('/test', methods=['GET'])
 def test_flask():
     return 'Hello, World!', 200
+
 
 # エントリー追加
 @app.route('/add', methods=['POST'])
